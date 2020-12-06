@@ -5,11 +5,18 @@ const modals = () => {
           close = document.querySelector(closeSelector),
           windows = document.querySelectorAll('[data-modal]');
 
+    const time = setTimeout(() => {
+      document.querySelector('.popup').style.display = 'block';
+      document.body.style.overflow = 'hidden'; 
+    }, 60000);
+
     trigger.forEach(item => {
       item.addEventListener('click', (e) => {
         if (e.target) {
           e.preventDefault();
         }
+
+        clearTimeout(time);
 
         windows.forEach(item => {
           item.style.display = 'none';
@@ -41,13 +48,6 @@ const modals = () => {
     });
   };
 
-  const showModalByTime = (selector, time) => {
-    setTimeout(() => {
-      document.querySelector(selector).style.display = 'block';
-      document.body.style.overflow = 'hidden'; 
-    }, time);
-  };
-
   bindModal('.popup_engineer_btn', '.popup_engineer','.popup_engineer .popup_close');
 
   bindModal('.phone_link', '.popup', '.popup .popup_close');
@@ -58,7 +58,7 @@ const modals = () => {
 
   bindModal('.popup_calc_profile_button', '.popup_calc_end', '.popup_calc_end_close', false);
 
-  showModalByTime('.popup', 60000);
 };
 
 export default modals;
+
