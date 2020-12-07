@@ -1,5 +1,6 @@
 import changeModalState from './modules/changeModalState';
 import forms from './modules/forms';
+import images from './modules/images';
 import modals from './modules/modals';
 import tabs from './modules/tabs';
 import timer from './modules/timer';
@@ -19,5 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
   tabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
   forms(modalState);
   timer('.container1', deadline);
+  images();
   
 });
