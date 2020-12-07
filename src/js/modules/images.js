@@ -3,7 +3,7 @@ const images = () => {
         workSection = document.querySelector('.works'),
         bigImg = document.createElement('img');
 
-  imgPopup.classList.add('popup');
+  imgPopup.classList.add('popup_div');
   workSection.append(imgPopup);
 
   imgPopup.style.cssText = `
@@ -17,7 +17,7 @@ const images = () => {
   workSection.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const target = e.target;
+    let target = e.target;
 
     if (target && target.classList.contains('preview')) {
       imgPopup.style.display = 'flex';
@@ -30,8 +30,9 @@ const images = () => {
       bigImg.setAttribute('src', path);
     }
 
-    if (target && target.matches('div.popup')) {
+    if (target && target.matches('div.popup_div')) {
       imgPopup.style.display = 'none';
+      document.body.style.overflow = '';
     }
   });
 };

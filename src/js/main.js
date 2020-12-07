@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let modalState = {};
   let deadline = '2020-12-31';
 
+  images();
   changeModalState(modalState);
   modals();
   tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
@@ -20,6 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
   tabs('.balcon_icons', '.balcon_icons_img', '.big_img > img', 'do_image_more', 'inline-block');
   forms(modalState);
   timer('.container1', deadline);
-  images();
+  
   
 });
